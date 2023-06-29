@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 import translate_apis
+import chatx_apis
 class MyApp:
     def __init__(self):
         self.app = FastAPI()
@@ -25,3 +26,4 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(translate_apis.router)
+app.include_router(chatx_apis.router)
